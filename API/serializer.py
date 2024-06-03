@@ -20,8 +20,8 @@ class UsuarioSerializer(serializers.ModelSerializer):
         fields = ['id', 'num_usuario', 'nif', 'nombre', 'direccion', 'telefono']
 
 class PrestamoSerializer(serializers.ModelSerializer):
-    libro = LibroSerializer(read_only=True)
-    usuario = UsuarioSerializer(read_only=True)
+    #libro = LibroSerializer(read_only=True)
+    #usuario = UsuarioSerializer(read_only=True)
     
     class Meta:
         model = Prestamo
