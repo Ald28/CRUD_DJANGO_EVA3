@@ -1,23 +1,20 @@
-from django.shortcuts import render
+# views.py
 from rest_framework import viewsets
-from .serializer import prestamoSerializer, usuarioSerializer, libroSerializer, autorSerializer
 from .models import Prestamo, Usuario, Libro, Autor
+from .serializer import PrestamoSerializer, UsuarioSerializer, LibroSerializer, AutorSerializer
 
-# Create your views here.
-
-class prestamoSerializer(viewsets.ModelViewSet):
+class PrestamoViewSet(viewsets.ModelViewSet):
     queryset = Prestamo.objects.all()
-    serializer_class = prestamoSerializer
-    
-class usuarioSerializer(viewsets.ModelViewSet):
+    serializer_class = PrestamoSerializer
+
+class UsuarioViewSet(viewsets.ModelViewSet):
     queryset = Usuario.objects.all()
-    serializer_class = usuarioSerializer
-    
-class libroSerializer(viewsets.ModelViewSet):
+    serializer_class = UsuarioSerializer
+
+class LibroViewSet(viewsets.ModelViewSet):
     queryset = Libro.objects.all()
-    serializer_class = libroSerializer
-    
-class autorSerializer(viewsets.ModelViewSet):
+    serializer_class = LibroSerializer
+
+class AutorViewSet(viewsets.ModelViewSet):
     queryset = Autor.objects.all()
-    serializer_class = autorSerializer
-    
+    serializer_class = AutorSerializer

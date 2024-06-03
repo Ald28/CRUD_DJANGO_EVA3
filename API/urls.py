@@ -1,18 +1,15 @@
+# urls.py
 from django.urls import path, include
 from rest_framework import routers
-from API import views
+from . import views
 
 router = routers.DefaultRouter()
 
-router.register(r'autor', views.autorSerializer)
-
-router.register(r'libro', views.libroSerializer)
-
-router.register(r'usuario', views.usuarioSerializer)
-
-router.register(r'prestamo', views.prestamoSerializer)
+router.register(r'autores', views.AutorViewSet)
+router.register(r'libros', views.LibroViewSet)
+router.register(r'usuarios', views.UsuarioViewSet)
+router.register(r'prestamos', views.PrestamoViewSet)
 
 urlpatterns = [
-    path('',include(router.urls)),
-    
+    path('', include(router.urls)),
 ]
